@@ -1,1 +1,46 @@
-My GitHub Page
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="js/imageCrop.js"></script>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+body{ background-color:black}
+h1,div{ text-align:center; color:white}
+table{margin:30px auto;}
+td{overflow:hidden;}
+</style>
+</head>
+
+<body onload="imageCrop('#imageTable',200,300)">
+<h1>Automatic crop</h1>
+<div id="sliders">
+<label><input id="x" type="range" min="100" max="400" value="200">width </label>
+<br />
+<label><input id="y" type="range" min="100" max="400" value="200">height </label>
+<br />
+<label><input id="z" type="range" min="-180" max="180" value="0">rotation </label>
+<br />
+<label><input id="t" type="range" min="0" max="100" value="80">opacity </label>
+</div>
+<table border="1" id="imageTable">
+ 
+  <tr>
+    <td><img src="images/The-Summoning.jpg" /></td>
+    <td><img src="images/fantasy-design02.jpg" /></td>
+    <td><img src="images/093d-model-rendering-midnight-B.jpg" /></td>
+  </tr>
+  <tr>
+    <td><img src="images/033d-garphic_dusk_endevours-B.jpg" /></td>
+    <td><img src="images/a-atlantis-b.jpg" /></td>
+    <td><img src="images/CenturionRage.jpg" /></td>
+  </tr>
+  <tr>
+    <td><img src="images/023d-fantastics-pioneersB.jpg" /></td>
+    <td><img src="images/boris-vallejio02.jpg" /></td>
+    <td><img src="images/dark-digital-artist04.jpg" /></td>
+  </tr>
+</table>
+</body>
+</html>
