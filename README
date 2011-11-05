@@ -1,0 +1,2 @@
+image_crop("conteinerId",x,y)
+Function reads html element "conteinerId" and on a base of input ratio x/y determines images widths, heights and margins in a way that images center is visible. <a href="http://saxomo.github.com/crop-images">Example page</a> (only webkit browsers) is showing table of images of diffferent sizes arranged in a ordered way
