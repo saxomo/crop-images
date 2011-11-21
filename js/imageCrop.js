@@ -11,8 +11,8 @@ function imageCrop(conteinerId,x,y){
 			difY = y/origHeight;	
 			difXIsBiger = difX>difY; 
 			$(imgs[i]).css({'width'  : (difXIsBiger?x:origWidth*difY)+'px',
-							'height' : (difXIsBiger?(origHeight*difX):y)+'px',
-							'margin' : (difXIsBiger?(y-origHeight*difX)*0.5:0)+'px '+(difXIsBiger?0:(x-origWidth*difY)*0.5)+'px '}) ;
+					'height' : (difXIsBiger?(origHeight*difX):y)+'px',
+					'margin' : (difXIsBiger?(y-origHeight*difX)*0.5:0)+'px '+(difXIsBiger?0:(x-origWidth*difY)*0.5)+'px '}) ;
 	 	} 	 	
 	}	
 	else{
@@ -22,10 +22,10 @@ function imageCrop(conteinerId,x,y){
 var cl,c;	
 
 $(document).ready(function(e ) {
-	$('#x').bind('change',changeImagesCrop );
-	$('#y').bind('change',changeImagesCrop );
-	$('#z').bind('change',imagesRotation );
-	$('#t').bind('change',imagesOpacity );
+	$('#x').bind('change',changeImagesCrop);
+	$('#y').bind('change',changeImagesCrop);
+	$('#z').bind('change',imagesRotation);
+	$('#t').bind('change',imagesOpacity);
 	$('img').bind('click',bigImg);		
 	changeImagesCrop();
 	imagesRotation();
@@ -48,15 +48,15 @@ function bigImg(e){
 	cl=$(this).clone();
 	
 	$("#big").css({"position":"absolute",
-		       "left":ax.left,
-		       "top":ax.top,
-		       "overfow":"hidden"});
-		$(c ).html(cl); 
-		$(cl).css("margin-left",ml*diff+"px");
-		$(cl).css("margin-top",mt*diff+"px");
-		$(cl).animate({"width":(a-2*ml*diff),
-			       "height":(b-2*mt*diff)}, 550);
-	
+		       "left"    : ax.left,
+		       "top"     : ax.top,
+		       "overfow" :"hidden"
+		       
+	});
+	$(c ).html(cl); 
+	$(cl).css("margin-left",ml*diff+"px");
+	$(cl).css("margin-top" ,mt*diff+"px");
+	$(cl).animate({"width" : a-2*ml*diff, "height": b-2*mt*diff }, 550 );	
 }  
 function fadeBigImg( ){   
 	$(cl).fadeOut("slow");	    
