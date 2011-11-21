@@ -19,7 +19,7 @@ function imageCrop(conteinerId,x,y){
 		setTimeout('imageCrop("'+conteinerId+'",'+x+','+y+')',1000);
 	}
 }
-var allready=false,cl,c;	
+var cl,c;	
 
 $(document).ready(function(e ) {
 	$('#x').bind('change',changeImagesCrop );
@@ -44,24 +44,22 @@ function bigImg(e){
 	var b=parseInt($('table').height());
 	var ax=$('table').offset(); 
 	var diff=a>b?a/xx:b/yy; 
-	if(!allready){ 
-		cl=$(this).clone();
-		allready=true;
+
+	cl=$(this).clone();
 	
-		$("#big").css({"position":"absolute",
-					   "left":ax.left,
-					   "top":ax.top,
-					   "overfow":"hidden"} 
-					  );
+	$("#big").css({"position":"absolute",
+		       "left":ax.left,
+		       "top":ax.top,
+		       "overfow":"hidden"});
 		$(c ).html(cl); 
 		$(cl).css("margin-left",ml*diff+"px");
 		$(cl).css("margin-top",mt*diff+"px");
 		$(cl).animate({"width":(a-2*ml*diff),
-					   "height":(b-2*mt*diff)}, 550);
-	}
+			       "height":(b-2*mt*diff)}, 550);
+	
 }  
 function fadeBigImg( ){   
-	$(cl).fadeOut("slow"); allready=false;   	    
+	$(cl).fadeOut("slow");	    
 		}	 
  
 function changeImagesCrop(evt){ 
