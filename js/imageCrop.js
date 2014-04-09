@@ -21,7 +21,7 @@ function imageCrop(conteinerId,x,y){
 }
 var cl,c;	
 
-$(document).ready(function(e ) {
+$(document).ready(function(e ) {alert(navigator.userAgent );
 	$('#x').bind('change',changeImagesCrop );
 	$('#y').bind('change',changeImagesCrop );
 	$('#z').bind('change',imagesRotation );
