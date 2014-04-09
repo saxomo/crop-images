@@ -84,7 +84,7 @@ function getTransformProperty(element) {
 	var propN =0;
 	for(var i=0,j=properties.length;i<j;i++){
 		if(typeof element.style[properties[i]+"Transform"] !== 'undefined'){
-			return properties[i];
+			return properties[i]+"Transform";
 		}
 	}
     
