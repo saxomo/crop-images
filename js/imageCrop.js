@@ -83,7 +83,7 @@ function getTransformProperty(element) {
   	var properties = ['', 'Webkit', 'Moz', 'Ms', 'O'];
 	var propN =0;
 	for(var i=0,j=properties.length;i<j;i++){
-		if(typeof element.style[properties[i]+"Transform"] !== 'undefined'){
+		if(typeof element[0].style[properties[i]+"Transform"] !== 'undefined'){
 			return properties[i]+"Transform";
 		}
 	}
