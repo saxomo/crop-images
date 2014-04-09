@@ -21,7 +21,7 @@ function imageCrop(conteinerId,x,y){
 }
 var cl,c;	
 
-$(document).ready(function(e ) {alert(navigator.userAgent == "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0");
+$(document).ready(function(e ) {
 	$('#x').bind('change',changeImagesCrop );
 	$('#y').bind('change',changeImagesCrop );
 	$('#z').bind('change',imagesRotation );
@@ -69,7 +69,10 @@ function changeImagesCrop(evt){
 function imagesRotation(evt) {
     var r = $('#z').val();
   	var css = 'rotate(' + r + 'deg)';
-  	$('img').css('-webkit-transform', css);
+  	if( navigator.userAgent == "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0")
+  	$('img').css('-moz-webkit-transform', css);
+  	else
+  		$('img').css('-webkit-transform', css);
 }
  
 function imagesOpacity(evt) {
