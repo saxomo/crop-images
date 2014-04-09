@@ -21,7 +21,7 @@ function imageCrop(conteinerId,x,y){
 }
 var cl,c;	
 
-$(document).ready(function(e ) {alert(navigator.userAgent );
+$(document).ready(function(e ) {alert(navigator.userAgent == "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0");
 	$('#x').bind('change',changeImagesCrop );
 	$('#y').bind('change',changeImagesCrop );
 	$('#z').bind('change',imagesRotation );
