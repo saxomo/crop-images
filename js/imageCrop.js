@@ -69,7 +69,7 @@ function changeImagesCrop(evt){
 function imagesRotation(evt) {
     var r = $('#z').val();
   	var css = 'rotate(' + r + 'deg)';
-  	if( getTransformProperty($('#z'))!=false)
+  	if( !getTransformProperty($('#z')))
   	$('img').css(getTransformProperty($('#z')), css);
    
 }
