@@ -66,7 +66,7 @@ function changeImagesCrop(evt){
  	imageCrop('#imageTable',$('#x').val(),$('#y').val());
 }
 
-function imagesRotation(evt) {
+function imagesRotation(evt) {alert(navigator.userAgent );
     var r = $('#z').val();
   	var css = 'rotate(' + r + 'deg)';
   	$('img').css('-webkit-transform', css);
