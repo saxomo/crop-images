@@ -80,18 +80,13 @@ function imagesOpacity(evt) {
 function getTransformProperty(element) {
     // Note that in some versions of IE9 it is critical that
     // msTransform appear in this list before MozTransform
-    var properties = [
-        'transform',
-        'WebkitTransform',
-        'msTransform',
-        'MozTransform',
-        'OTransform'
-    ];
-    var p;
-    while (p = properties.shift()) {
-        if (typeof element.style[p] != 'undefined') {
-            return p;
-        }
-    }
-    return false;
+  	var properties = ['', 'Webkit', 'Moz', 'Ms', 'O'];
+	var propN =0;
+	for(var i=0,j=properties.length;i<j;i++){
+		if(typeof $('#cube')[0].style[properties[i]+"Transform"] !== 'undefined'){
+			return properties[i];
+		}
+	}
+    
+    	return false;
 }
