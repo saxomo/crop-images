@@ -69,12 +69,29 @@ function changeImagesCrop(evt){
 function imagesRotation(evt) {
     var r = $('#z').val();
   	var css = 'rotate(' + r + 'deg)';
-  	if( navigator.userAgent == "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0")
-  	$('img').css('MozTransform', css);
-  	else
-  		$('img').css('-webkit-transform', css);
+  	if( getTransformProperty($('#z'))!=false)
+  	$('img').css(getTransformProperty($('#z')), css);
+   
 }
  
 function imagesOpacity(evt) {
   	$('img').css({'opacity':  $('#t').val()*0.01});
+}
+function getTransformProperty(element) {
+    // Note that in some versions of IE9 it is critical that
+    // msTransform appear in this list before MozTransform
+    var properties = [
+        'transform',
+        'WebkitTransform',
+        'msTransform',
+        'MozTransform',
+        'OTransform'
+    ];
+    var p;
+    while (p = properties.shift()) {
+        if (typeof element.style[p] != 'undefined') {
+            return p;
+        }
+    }
+    return false;
 }
