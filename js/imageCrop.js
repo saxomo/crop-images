@@ -70,7 +70,7 @@ function imagesRotation(evt) {
     var r = $('#z').val();
   	var css = 'rotate(' + r + 'deg)';
   	if( navigator.userAgent == "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0")
-  	$('img').css('-o-transform', css);
+  	$('img').css('MozTransform', css);
   	else
   		$('img').css('-webkit-transform', css);
 }
